@@ -1,25 +1,26 @@
-# 📊 Raport projektu: Model LSTM dla analizy danych
+# 📌 Opis projektu
+Celem projektu jest analiza danych przy użyciu sieci neuronowej LSTM. Notebook zawiera kroki przetwarzania danych, normalizację, przygotowanie zestawu treningowego oraz budowę modelu. Kod zawiera również testy jednostkowe do weryfikacji poprawności funkcji.
 
 📁 Struktura kodu
-przetworz_dane(dataset: pd.DataFrame) -> pd.DataFrame
-Konwertuje wartości liczbowe i tekstowe do odpowiednich formatów.
-normalizuj_dane(trainset: np.ndarray) -> np.ndarray
-Skaluje dane do zakresu (0,1).
-przygotuj_zestaw_treningowy(data_scaled: np.ndarray, window: int = 70) -> tuple
-Tworzy zestawy x_train i y_train dla modelu LSTM.
-zbuduj_model_lstm(input_shape: tuple) -> Sequential
-Tworzy i kompiluje model LSTM.
+Przetwarzanie danych
 
+Konwersja wartości liczbowych i tekstowych na odpowiednie typy danych.
+Zamiana przecinków na kropki w wartościach liczbowych.
 
-✅ Testy jednostkowe
-Plik zawiera testy jednostkowe wykorzystujące unittest, które sprawdzają:
+Normalizacja danych
 
-Poprawność konwersji danych (przetworz_dane).
-Skalowanie wartości (normalizuj_dane).
-Struktury danych dla modelu (przygotuj_zestaw_treningowy).
-Poprawność warstw modelu LSTM (zbuduj_model_lstm).
+Skalowanie wartości do zakresu (0,1) przy użyciu MinMaxScaler.
+Przygotowanie zestawu treningowego
+
+Tworzenie macierzy x_train i y_train w oparciu o okno czasowe.
+Budowa modelu LSTM
+
+Warstwy modelu:
+Dwie warstwy LSTM (50 jednostek każda)
+Dropout (0.2) dla regularizacji
+Warstwa Dense do generowania wyników
+
 
 📌 Uwagi
 Dane powinny być w formacie CSV przed przetwarzaniem.
-Testy jednostkowe pomagają w walidacji poszczególnych funkcji.
 Model LSTM można dalej optymalizować poprzez dostosowanie hiperparametrów.
