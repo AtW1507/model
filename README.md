@@ -9,6 +9,8 @@ przygotuj_zestaw_treningowy(data_scaled: np.ndarray, window: int = 70) -> tuple
 Tworzy zestawy x_train i y_train dla modelu LSTM.
 zbuduj_model_lstm(input_shape: tuple) -> Sequential
 Tworzy i kompiluje model LSTM.
+
+
 ✅ Testy jednostkowe
 Plik zawiera testy jednostkowe wykorzystujące unittest, które sprawdzają:
 
